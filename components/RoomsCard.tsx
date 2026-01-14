@@ -19,7 +19,7 @@ export default function RoomsCard() {
 </h2>
 
         <p className="text-sm text-gray-600 mt-1">
-          Non-AC • 2 / 3 / 4 / 5 Sharing
+          Non-AC • 2 / 3 / 4 Sharing
         </p>
 
         <p className="text-xs text-blue-600 mt-2 font-medium">
@@ -48,7 +48,9 @@ export default function RoomsCard() {
             >
               {/* Header */}
               <div className="flex justify-between items-center mb-4">
-                <h3 className="text-lg font-bold">🛏️ Rooms & Rent</h3>
+<h2 className="text-lg font-extrabold text-gray-900 flex items-center gap-2">
+          🛏️ Rooms & Rent
+        </h2>
                 <button
                   onClick={() => setOpen(false)}
                   className="text-gray-500 text-xl"

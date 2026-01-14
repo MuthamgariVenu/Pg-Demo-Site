@@ -47,7 +47,17 @@ export default function FoodMenuCard() {
             >
               {/* Header */}
               <div className="flex justify-between items-center mb-4">
-                <h3 className="text-lg font-bold">🍽️ Food Details</h3>
+                       <h3
+                  className="
+                    text-lg
+                    font-extrabold
+                    text-gray-900
+                    opacity-100
+                    leading-tight
+                  "
+                >
+                  🍽️ Food Details
+                </h3>
                 <button
                   onClick={() => setOpen(false)}
                   className="text-gray-500 text-xl"

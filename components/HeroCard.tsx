@@ -39,7 +39,7 @@ export default function HeroCard() {
       <div className="p-4 text-center">
         {/* Address – subtitle standard */}
         <p className="text-xs text-gray-700 font-medium">
-          Siddiq Nagar, 10th Line, Hitech City, Hyderabad, Telangana 500032
+           Hitech City, Hyderabad, Telangana 500032
         </p>
 
         {/* Title – FINAL LOCKED STYLE */}
@@ -57,7 +57,7 @@ export default function HeroCard() {
           href="tel:9701716111"
           className="inline-flex items-center justify-center gap-2 mt-4 px-6 py-2 rounded-full text-base font-bold text-white bg-green-600 animate-pulse shadow-lg"
         >
-          📞 Call Now: 97017xxxxx
+          📞 Call Now: 99*******
         </a>
 
         {/* SECONDARY CONTACT */}
@@ -67,7 +67,7 @@ export default function HeroCard() {
             href="tel:9985499864"
             className="font-semibold text-green-700 underline"
           >
-            99******
+            99********
           </a>
         </p>
       </div>

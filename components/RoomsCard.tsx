@@ -20,12 +20,13 @@ export default function RoomsCard() {
 
         {/* ✅ Safari-safe subtitle */}
         <p className="text-sm text-gray-700 font-medium mt-1">
-          Room • 2 / 3 / 4 Sharing
+          Room • 2 / 3 / 4 / 5 / Sharing
         </p>
 
-        <p className="text-xs text-blue-600 mt-2 font-medium">
-          👉 Tap to view room details & rent
-        </p>
+        <p className="text-sm blink-blue">
+  👉 Tap to view room details & rent
+</p>
+
       </motion.div>
 
       {/* Overlay */}
@@ -63,14 +64,19 @@ export default function RoomsCard() {
               {/* ROOMS AS CARDS (SIZE SAME) */}
               <div className="space-y-3 text-sm">
                 <Room
+                  title="5 Sharing "
+                  price="₹6,000 / month"
+                  bg="bg-indigo-50"
+                />
+                <Room
                   title="4 Sharing "
-                  price="₹6,000 And ₹6,500 / month"
+                  price="₹6,500 / month"
                   bg="bg-indigo-50"
                 />
 
                 <Room
                   title="3 Sharing "
-                  price="₹7,500 And ₹8,000 / month"
+                  price="₹7,500 / month"
                   bg="bg-cyan-50"
                 />
 

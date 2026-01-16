@@ -24,9 +24,10 @@ export default function FoodMenuCard() {
           Homely food • 3 times daily
         </p>
 
-        <p className="text-xs text-blue-600 mt-2 font-medium">
-          👉 Tap to view food details
-        </p>
+        <p className="text-sm blink-blue">
+  👉 Tap to view food details
+</p>
+
       </motion.div>
 
       {/* Overlay */}

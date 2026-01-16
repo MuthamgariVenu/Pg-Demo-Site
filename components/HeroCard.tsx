@@ -14,7 +14,7 @@ export default function HeroCard() {
       {/* IMAGE SECTION */}
       <div className="relative w-full aspect-[16/9]">
         <Image
-          src="/images/pg-frontV3.jpg"
+          src="/images/pg-frontV4.jpg"
           alt="Platinum Bloom Women's PG"
           fill
           priority
@@ -44,7 +44,7 @@ export default function HeroCard() {
 
         {/* Title – FINAL LOCKED STYLE */}
         <h1 className="text-xl font-extrabold text-gray-900 mt-2">
-          Platinum Bloom Women&apos;s PG
+          Sample PG Website (Demo)
         </h1>
 
         {/* Subtitle – FINAL LOCKED STYLE */}
@@ -57,7 +57,7 @@ export default function HeroCard() {
           href="tel:9701716111"
           className="inline-flex items-center justify-center gap-2 mt-4 px-6 py-2 rounded-full text-base font-bold text-white bg-green-600 animate-pulse shadow-lg"
         >
-          📞 Call Now: 9701716111
+          📞 Call Now: 97017xxxxx
         </a>
 
         {/* SECONDARY CONTACT */}
@@ -67,7 +67,7 @@ export default function HeroCard() {
             href="tel:9985499864"
             className="font-semibold text-green-700 underline"
           >
-            9985499864
+            99******
           </a>
         </p>
       </div>

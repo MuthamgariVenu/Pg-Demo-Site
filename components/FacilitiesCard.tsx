@@ -1,62 +1,139 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
 export default function FacilitiesCard() {
   const facilities = [
-    { icon: "🧺", label: "Washing Machine", bg: "bg-blue-50" },
-    { icon: "📶", label: "WiFi", bg: "bg-indigo-50" },
-    { icon: "🗄️", label: "Cupboards", bg: "bg-cyan-50" },
-    { icon: "🔥", label: "Geyser", bg: "bg-orange-50" },
-    { icon: "🧊", label: "Refrigerator (Each floor)", bg: "bg-sky-50" },
-    { icon: "🚰", label: "Water Dispenser (Each Floor)", bg: "bg-teal-50" },
-    { icon: "📹", label: "CCTV", bg: "bg-gray-50" },
-    { icon: "🆔", label: "Fingerprint Access", bg: "bg-purple-50" },
-    { icon: "👟", label: "Shoe Rack", bg: "bg-slate-50" },
-    
+    {
+      icon: "🧺",
+      title: "Washing Machine",
+      sub: "Laundry",
+      tag: null,
+      bg: "bg-blue-50",
+    },
+    {
+      icon: "📶",
+      title: "WiFi",
+      sub: "Fast net",
+      tag: "Popular",
+      bg: "bg-indigo-50",
+    },
+    {
+      icon: "🗄️",
+      title: "Cupboards",
+      sub: "Storage",
+      tag: null,
+      bg: "bg-cyan-50",
+    },
+    {
+      icon: "🔥",
+      title: "Geyser",
+      sub: "Hot water",
+      tag: null,
+      bg: "bg-orange-50",
+    },
+    {
+      icon: "🧊",
+      title: "Refrigerator",
+      sub: "Each floor",
+      tag: null,
+      bg: "bg-sky-50",
+    },
+    {
+      icon: "🚰",
+      title: "Water",
+      sub: "Drinking",
+      tag: null,
+      bg: "bg-teal-50",
+    },
+    {
+      icon: "📹",
+      title: "CCTV",
+      sub: "24/7",
+      tag: "Secure",
+      bg: "bg-slate-50",
+    },
+    {
+      icon: "🆔",
+      title: "Fingerprint",
+      sub: "Safe entry",
+      tag: "Secure",
+      bg: "bg-purple-50",
+    },
+    {
+      icon: "👟",
+      title: "Shoe Rack",
+      sub: "Organized",
+      tag: null,
+      bg: "bg-emerald-50",
+    },
   ];
 
-  return (
-    <div className="mt-5">
-      <div className="rounded-3xl bg-gradient-to-br from-green-200/40 via-white to-green-100/40 p-[1.5px] shadow-lg">
-        <div className="rounded-3xl bg-white/95 backdrop-blur p-6">
-          
-          {/* Header */}
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-lg font-bold text-gray-900 flex items-center gap-2">
-              🛠️ Facilities
-            </h2>
-            <span className="text-xs text-green-600 font-medium">
-              Included
-            </span>
-          </div>
+  const [active, setActive] = useState(0);
 
-          {/* Grid */}
-          <div className="grid grid-cols-3 gap-4 text-center">
-            {facilities.map((item, i) => (
+  // 🔁 Auto highlight (mobile-friendly)
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActive((prev) => (prev + 1) % facilities.length);
+    }, 1800);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="mt-6">
+      <div className="rounded-[28px] bg-white shadow-xl p-6">
+        {/* Header */}
+        <div className="flex justify-between items-center mb-5">
+          <h2 className="text-lg font-semibold flex items-center gap-2">
+            🛠️ Facilities
+          </h2>
+          <span className="text-xs text-green-600 font-medium">Included</span>
+        </div>
+
+        {/* Grid */}
+        <div className="grid grid-cols-3 gap-3">
+          {facilities.map((item, i) => {
+            const isActive = i === active;
+
+            return (
               <div
                 key={i}
-                className={`rounded-2xl p-4 ${item.bg} transition-all duration-200 hover:shadow-md hover:-translate-y-0.5`}
+                className={`relative rounded-[22px] ${item.bg} p-3 text-center transition-colors`}
               >
-                <div className="flex flex-col items-center gap-2">
-                  <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-2xl shadow-sm">
-                    {item.icon}
-                  </div>
-                  <span className="text-xs font-semibold text-gray-900 leading-tight text-center">
-                    {item.label}
+                {/* Tag */}
+                {item.tag && (
+                  <span className="absolute -top-2 left-1/2 -translate-x-1/2 text-[10px] px-2 py-[2px] rounded-full bg-green-500 text-white">
+                    {item.tag}
                   </span>
+                )}
+
+                {/* ICON (ONLY THIS ANIMATES) */}
+                <div
+                  className={`mx-auto mb-2 w-11 h-11 rounded-full flex items-center justify-center text-xl transition-all duration-300
+                  ${
+                    isActive
+                      ? "bg-green-200 scale-110 shadow-[0_0_0_6px_rgba(34,197,94,0.25)] animate-pulse"
+                      : "bg-white"
+                  }`}
+                >
+                  {item.icon}
                 </div>
+
+                {/* Text */}
+                <p className="text-xs font-semibold text-gray-900 leading-tight">
+                  {item.title}
+                </p>
+                <p className="text-[11px] text-gray-500">{item.sub}</p>
               </div>
-            ))}
-          </div>
-
-          {/* Footer */}
-          <div className="mt-6 text-center text-xs text-gray-600">
-            All facilities are available for residents
-            <p className="mt-3 text-center text-sm font-semibold text-green-700 animate-pulse">
-  ⚡ Electricity bill included
-</p>
-
-          </div>
+            );
+          })}
         </div>
+
+        {/* Footer */}
+        <p className="mt-5 text-center text-sm text-green-700 flex items-center justify-center gap-1">
+          ⚡ Electricity bill included
+        </p>
       </div>
     </div>
   );
